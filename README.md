@@ -11,16 +11,16 @@ documentation.
 If you are new to using `nbdev` here are some useful pointers to get you
 started.
 
-### Install zenpy_garden in Development mode
+### Install zpgarden in Development mode
 
 ``` sh
-# make sure zenpy_garden package is installed in development mode
+# make sure zpgarden package is installed in development mode
 $ pip install -e .
 
 # make changes under nbs/ directory
 # ...
 
-# compile to have changes apply to zenpy_garden
+# compile to have changes apply to zpgarden
 $ nbdev_prepare
 ```
 
@@ -38,13 +38,13 @@ $ pip install git+https://github.com/shawnemhe/zenpy-garden.git
 or from [conda](https://anaconda.org/shawnemhe/zenpy-garden)
 
 ``` sh
-$ conda install -c shawnemhe zenpy_garden
+$ conda install -c shawnemhe zpgarden
 ```
 
 or from [pypi](https://pypi.org/project/zenpy-garden/)
 
 ``` sh
-$ pip install zenpy_garden
+$ pip install zpgarden
 ```
 
 ### Documentation
