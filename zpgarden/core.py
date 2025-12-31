@@ -4,7 +4,7 @@
 
 # %% auto 0
 __all__ = ['bedrock_css', 'variables_css', 'buttons_css', 'forms_css', 'tags_css', 'avatars_css', 'anchors_css', 'garden_hdrs',
-           'clstoname', 'mk_compfn', 'mk_previewer']
+           'mk_compfn', 'mk_previewer']
 
 # %% ../nbs/00_core.ipynb 3
 from fastcore.utils import *
@@ -15,7 +15,7 @@ from fasthtml.jupyter import *
 import inspect
 
 # %% ../nbs/00_core.ipynb 5
-def clstoname(
+def _clstoname(
     compcls: str  # Garden CSS class name (e.g. 'c-btn')
     ) -> str:      # PascalCase component name (e.g. 'Btn')
     "Convert a Garden CSS class name to a PascalCase component name"
@@ -30,7 +30,7 @@ def mk_compfn(
     **compkw  # Additional kwargs passed to every component call
     ):
     "Create a FastHTML component function for a Garden CSS class"
-    if not name: name = clstoname(compcls)
+    if not name: name = _clstoname(compcls)
     if not tag: tag = name
     compfunc = getattr(fh, tag)
 
@@ -42,7 +42,7 @@ def mk_compfn(
     inspect.currentframe().f_back.f_globals[name] = fn
 
 
-# %% ../nbs/00_core.ipynb 8
+# %% ../nbs/00_core.ipynb 13
 # Core packages
 bedrock_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-bedrock/dist/index.css', rel='stylesheet')
 variables_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-variables/dist/index.css', rel='stylesheet')
