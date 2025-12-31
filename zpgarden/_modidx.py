@@ -5,6 +5,7 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://shawnemhe.github.io',
                 'git_url': 'https://github.com/shawnemhe/zenpy-garden',
                 'lib_path': 'zpgarden'},
-  'syms': { 'zpgarden.core': { 'zpgarden.core._clstoname': ('core.html#_clstoname', 'zpgarden/core.py'),
+  'syms': { 'zpgarden.components': {},
+            'zpgarden.core': { 'zpgarden.core._clstoname': ('core.html#_clstoname', 'zpgarden/core.py'),
                                'zpgarden.core.mk_compfn': ('core.html#mk_compfn', 'zpgarden/core.py'),
                                'zpgarden.core.mk_previewer': ('core.html#mk_previewer', 'zpgarden/core.py')}}}

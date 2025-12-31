@@ -2,7 +2,7 @@ project:
   output-dir: _docs
 
 website:
-  title: "zenpy-garden"
+  title: "zpgarden"
   site-url: "https://shawnemhe.github.io/zenpy-garden"
   description: "A FastHTML wrapper for Zendesk Garden CSS"
   repo-branch: main
