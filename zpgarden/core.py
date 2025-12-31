@@ -15,6 +15,20 @@ from fasthtml.jupyter import *
 import inspect
 
 # %% ../nbs/00_core.ipynb 5
+# Core packages
+bedrock_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-bedrock@^10/dist/index.css', rel='stylesheet')
+variables_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-variables@^7/dist/index.css', rel='stylesheet')
+
+# Component packages
+buttons_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-buttons@^9/dist/index.css', rel='stylesheet')
+forms_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-forms@^8/dist/index.css', rel='stylesheet')
+tags_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-tags@^6/dist/index.css', rel='stylesheet')
+avatars_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-avatars@^7/dist/index.css', rel='stylesheet')
+anchors_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-anchors@^1/dist/index.css', rel='stylesheet')
+
+garden_hdrs = (bedrock_css, variables_css, buttons_css, forms_css, tags_css, avatars_css, anchors_css)
+
+# %% ../nbs/00_core.ipynb 7
 def _clstoname(
     compcls: str  # Garden CSS class name (e.g. 'c-btn')
     ) -> str:      # PascalCase component name (e.g. 'Btn')
@@ -42,20 +56,7 @@ def mk_compfn(
     inspect.currentframe().f_back.f_globals[name] = fn
 
 
-# %% ../nbs/00_core.ipynb 13
-# Core packages
-bedrock_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-bedrock/dist/index.css', rel='stylesheet')
-variables_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-variables/dist/index.css', rel='stylesheet')
-
-# Component packages
-buttons_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-buttons/dist/index.css', rel='stylesheet')
-forms_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-forms/dist/index.css', rel='stylesheet')
-tags_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-tags/dist/index.css', rel='stylesheet')
-avatars_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-avatars/dist/index.css', rel='stylesheet')
-anchors_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-anchors/dist/index.css', rel='stylesheet')
-
-garden_hdrs = (bedrock_css, variables_css, buttons_css, forms_css, tags_css, avatars_css, anchors_css)
-
+# %% ../nbs/00_core.ipynb 16
 def mk_previewer(
     app=None,  # FastHTML app to use (creates one with garden_hdrs if None)
     cls=''     # CSS classes for the preview container div
