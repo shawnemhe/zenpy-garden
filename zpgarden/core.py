@@ -56,7 +56,7 @@ def mk_compfn(
     inspect.currentframe().f_back.f_globals[name] = fn
 
 
-# %% ../nbs/00_core.ipynb 16
+# %% ../nbs/00_core.ipynb 15
 def mk_previewer(
     app=None,  # FastHTML app to use (creates one with garden_hdrs if None)
     cls=''     # CSS classes for the preview container div

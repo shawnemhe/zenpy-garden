@@ -11,3 +11,7 @@ from .core import *
 
 # %% ../nbs/01_components.ipynb 6
 mk_compfn('c-anchor', 'A')
+
+# %% ../nbs/01_components.ipynb 14
+mk_compfn('c-avatar', 'Figure')
+mk_compfn('c-avatar__txt', 'Span', 'AvatarText')
