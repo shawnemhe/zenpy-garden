@@ -34,7 +34,7 @@ def _clstoname(
     ) -> str:      # PascalCase component name (e.g. 'Btn')
     "Convert a Garden CSS class name to a PascalCase component name"
     assert compcls[:2] == 'c-'
-    return ''.join(s.title() for s in compcls[2:].split('-'))
+    return ''.join(s.title() for s in compcls[2:].split('_'))
 
 def mk_compfn(
     compcls,  # Base CSS class (e.g. 'c-btn')
@@ -54,7 +54,6 @@ def mk_compfn(
 
     fn.__name__ = name
     inspect.currentframe().f_back.f_globals[name] = fn
-
 
 # %% ../nbs/00_core.ipynb 15
 def mk_previewer(
