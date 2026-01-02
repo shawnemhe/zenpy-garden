@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "zenpy-garden core",
+    "section": "",
+    "text": "Garden CSS is split into packages. The core packages (bedrock and variables) are required, while component packages can be included as needed.\nThe garden_hdrs tuple bundles all available CSS. Use it when creating your FastHTML app:\napp = FastHTML(hdrs=garden_hdrs)\nFor notebook development, see Preview Helper which handles this automatically.\n\n\nExported source\n# Core packages\nbedrock_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-bedrock@^10/dist/index.css', rel='stylesheet')\nvariables_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-variables@^7/dist/index.css', rel='stylesheet')\n\n# Component packages\nbuttons_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-buttons@^9/dist/index.css', rel='stylesheet')\nforms_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-forms@^8/dist/index.css', rel='stylesheet')\ntags_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-tags@^6/dist/index.css', rel='stylesheet')\navatars_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-avatars@^7/dist/index.css', rel='stylesheet')\nanchors_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-anchors@^1/dist/index.css', rel='stylesheet')\n\ngarden_hdrs = (bedrock_css, variables_css, buttons_css, forms_css, tags_css, avatars_css, anchors_css)",
+    "crumbs": [
+      "zenpy-garden core"
+    ]
+  },
+  {
+    "objectID": "core.html#garden-headers",
+    "href": "core.html#garden-headers",
+    "title": "zenpy-garden core",
+    "section": "",
+    "text": "Garden CSS is split into packages. The core packages (bedrock and variables) are required, while component packages can be included as needed.\nThe garden_hdrs tuple bundles all available CSS. Use it when creating your FastHTML app:\napp = FastHTML(hdrs=garden_hdrs)\nFor notebook development, see Preview Helper which handles this automatically.\n\n\nExported source\n# Core packages\nbedrock_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-bedrock@^10/dist/index.css', rel='stylesheet')\nvariables_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-variables@^7/dist/index.css', rel='stylesheet')\n\n# Component packages\nbuttons_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-buttons@^9/dist/index.css', rel='stylesheet')\nforms_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-forms@^8/dist/index.css', rel='stylesheet')\ntags_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-tags@^6/dist/index.css', rel='stylesheet')\navatars_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-avatars@^7/dist/index.css', rel='stylesheet')\nanchors_css = Link(href='https://cdn.jsdelivr.net/npm/@zendeskgarden/css-anchors@^1/dist/index.css', rel='stylesheet')\n\ngarden_hdrs = (bedrock_css, variables_css, buttons_css, forms_css, tags_css, avatars_css, anchors_css)",
+    "crumbs": [
+      "zenpy-garden core"
+    ]
+  },
+  {
+    "objectID": "core.html#component-factory",
+    "href": "core.html#component-factory",
+    "title": "zenpy-garden core",
+    "section": "Component Factory",
+    "text": "Component Factory\n\nsource\n\nmk_compfn\n\n mk_compfn (compcls, tag=None, name=None, xcls='', **compkw)\n\nCreate a FastHTML component function for a Garden CSS class\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\ncompcls\n\n\nBase CSS class (e.g. ‘c-btn’)\n\n\ntag\nNoneType\nNone\nHTML tag function to use (defaults to name)\n\n\nname\nNoneType\nNone\nComponent function name (defaults to clstoname(compcls))\n\n\nxcls\nstr\n\nExtra classes to always include\n\n\ncompkw\nVAR_KEYWORD\n\n\n\n\n\nCreate a button component by passing the Garden CSS class to mk_compfn:\n\nmk_compfn('c-btn')\n\nThis creates a Btn function that wraps the c-btn class. Use it like any FastHTML component:\n\nbtn = Btn('Click me')\nprint(btn)\n\n&lt;btn class=\"c-btn  \"&gt;Click me&lt;/btn&gt;\n\n\nGarden modifiers start with --. Pass them via cls and they’ll be prefixed automatically:\n\npill = Btn('Click me', cls='--pill')\nprint(pill)\n\n&lt;btn class=\"c-btn c-btn--pill \"&gt;Click me&lt;/btn&gt;",
+    "crumbs": [
+      "zenpy-garden core"
+    ]
+  },
+  {
+    "objectID": "core.html#preview-helper",
+    "href": "core.html#preview-helper",
+    "title": "zenpy-garden core",
+    "section": "Preview Helper",
+    "text": "Preview Helper\n\nsource\n\nmk_previewer\n\n mk_previewer (app=None, cls='')\n\nCreate a preview function for rendering Garden components in notebooks\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\napp\nNoneType\nNone\nFastHTML app to use (creates one with garden_hdrs if None)\n\n\ncls\nstr\n\nCSS classes for the preview container div\n\n\n\n\np = mk_previewer()\np(\n    Div(btn),\n    Div(pill)\n)",
+    "crumbs": [
+      "zenpy-garden core"
+    ]
+  },
+  {
+    "objectID": "components.html",
+    "href": "components.html",
+    "title": "Components",
+    "section": "",
+    "text": "p = mk_previewer()",
+    "crumbs": [
+      "Components"
+    ]
+  },
+  {
+    "objectID": "components.html#anchors",
+    "href": "components.html#anchors",
+    "title": "Components",
+    "section": "Anchors",
+    "text": "Anchors\nThe c-anchor component styles links with Garden’s typography and color system.\n\nBasic Usage\n\np(Anchor('Click here', href='#'))\n\n \n\n\n\n\nDanger\n\np(Anchor('Delete this', href='#', cls='--danger'))\n\n \n\n\n\n\nDark\nFor use on dark backgrounds.\n\np(Div(Anchor('Dark link', href='#', cls='--dark'), style='background:#333; padding:1rem'))",
+    "crumbs": [
+      "Components"
+    ]
+  },
+  {
+    "objectID": "components.html#avatars",
+    "href": "components.html#avatars",
+    "title": "Components",
+    "section": "Avatars",
+    "text": "Avatars\nStyled avatar images with Garden’s sizing and shape system.\n\nBasic Usage\nAn Avatar can contain an image or text\n\np(Avatar(Img(src='https://ui-avatars.com/api/?name=John+Doe')))\n\n \n\n\n\np(Div(\n    Avatar(Img(src='https://picsum.photos/200')),\n    Avatar(AvatarTxt('ZD'), style='background:var(--zd-color-secondary-royal-700)'),\n    style='display:flex; gap:1rem; align-items:center'\n))\n\n \n\n\n\nprint(Avatar(Span('ZD', cls='c-avatar__txt', style='background:--zd-color-secondary-royal-700'), cls='--system'))\n\n&lt;figure class=\"c-avatar c-avatar--system \"&gt;&lt;span class=\"c-avatar__txt\" style=\"background:--zd-color-secondary-royal-700\"&gt;ZD&lt;/span&gt;&lt;/figure&gt;\n\n\n\n\nSizes\nAvatars come in extra-small, small, default, and large sizes.\n\np(Div(\n    Avatar(Img(src='https://ui-avatars.com/api/?name=XS'), cls='--xs'),\n    Avatar(Img(src='https://ui-avatars.com/api/?name=SM'), cls='--sm'),\n    Avatar(Img(src='https://ui-avatars.com/api/?name=MD')),\n    Avatar(Img(src='https://ui-avatars.com/api/?name=LG'), cls='--lg')\n))\n\n \n\n\n\n\nSystem\nSquare avatars for system/product icons.\n\np(Avatar(Img(src='https://ui-avatars.com/api/?name=SYS'), cls='--system'))\n\n \n\n\n\n\nDark\nFor use on dark backgrounds.\n\np(Div(Avatar(Img(src='https://ui-avatars.com/api/?name=DK'), cls='--dark'), style='background:#333; padding:1rem'))",
+    "crumbs": [
+      "Components"
+    ]
+  },
+  {
+    "objectID": "components.html#buttons",
+    "href": "components.html#buttons",
+    "title": "Components",
+    "section": "Buttons",
+    "text": "Buttons\nStyled buttons with Garden’s button system.\n\nBasic Usage\n\np(Div(\n    Btn('Standard'),\n    Btn('Basic', cls='--basic'),\n    Btn('Pill', cls='--pill'),\n    style='display:flex; gap:1rem; align-items:center'\n))\n\n \n\n\n\n\nPrimary\n\np(Btn('Primary', cls='--primary'))\n\n \n\n\n\n\nDanger\n\np(Btn('Delete', cls='--danger'))\n\n \n\n\n\n\nFull Width\n\np(Btn('Full Width', cls='--full'))\n\n \n\n\n\n\nSizes\n\np(Div(Btn('Small', cls='--sm'), Btn('Default'), Btn('Large', cls='--lg'), style='display:flex; gap:1rem; align-items:center'))\n\n \n\n\n\n\nDark\nFor use on dark backgrounds.\n\np(Div(Btn('Dark', cls='--dark'), style='background:#333; padding:1rem'))\n\n \n\n\n\n\nCombinations\n\np(Div(Btn('Primary Pill', cls='--primary --pill'), Btn('Danger Large', cls='--danger --lg'), style='display:flex; gap:1rem'))",
+    "crumbs": [
+      "Components"
+    ]
+  },
+  {
+    "objectID": "components.html#forms",
+    "href": "components.html#forms",
+    "title": "Components",
+    "section": "Forms",
+    "text": "Forms\nGarden forms combine inputs with labels, hints, and validation messages inside a c-field container.\n\nBasic Usage\n\n\nText Input\n\np(Field(\n    FieldLabel('Name', fr='name-id'),\n    FieldHint('Enter your full name'),\n    FieldInput(id='name-id', placeholder='John Doe')\n))\n\n \n\n\n\n\nTextarea\n\np(Field(\n    FieldLabel('Bio', fr='bio-id'),\n    Textarea(id='bio-id', placeholder='Tell us about yourself')\n))\n\n \n\n\n\n\nSelect\n\np(Field(\n    FieldLabel('Country', fr='country-id'),\n    Select(Option('USA'), Option('UK'), Option('Canada'), id='country-id')\n))\n\n \n\n\n\n\nCheckbox\n\np(Field(\n    Checkbox(id='agree-id'),\n    FieldLabel('I agree to the terms', fr='agree-id'),\n    FieldHint('Please read carefully')\n))\n\n \n\n\n\n\nRadio\n\np(Div(\n    Field(Radio(id='opt1', name='options'), FieldLabel('Option 1', fr='opt1')),\n    Field(Radio(id='opt2', name='options'), FieldLabel('Option 2', fr='opt2')),\n    Field(Radio(id='opt3', name='options'), FieldLabel('Option 3', fr='opt3'))\n))\n\n \n\n\n\n\nValidation States\n\np(Field(\n    FieldLabel('Email'), FieldInput(),\n    FieldMessage('Valid email', cls='--success'),\n    cls='--success'\n))\n\n \n\n\n\np(Field(\n    FieldLabel('Password'), FieldInput(type='password'),\n    FieldMessage('Password too weak', cls='--warning'),\n    cls='--warning'\n))\n\n \n\n\n\np(Field(\n    FieldLabel('Username'), FieldInput(),\n    FieldMessage('Username is required', cls='--error'),\n    cls='--error'\n))\n\n \n\n\n\n\nCompact and Dark\n\np(Field(FieldLabel('Compact'), FieldInput(), cls='--compact'))\n\n \n\n\n\np(Div(\n    Field(FieldLabel('Dark mode'), FieldInput(), cls='--dark'),\n    style='background:#333; padding:1rem'\n))",
+    "crumbs": [
+      "Components"
+    ]
+  },
+  {
+    "objectID": "components.html#tags",
+    "href": "components.html#tags",
+    "title": "Components",
+    "section": "Tags",
+    "text": "Tags\nStyled tags for badges, pills, and labels using Garden’s tag system.\n\nBasic Usage\n\n\nShapes\nTags come in default (rounded rectangle), pill, and round shapes.\n\np(Div(\n    Tag('Default'),\n    Tag('Pill', cls='--pill'),\n    Tag('R', cls='--round'),\n    style='display:flex; gap:1rem'\n))\n\n \n\n\n\n\nSizes\n\np(Div(\n    Tag('Small', cls='--sm'),\n    Tag('Default'),\n    Tag('Large', cls='--lg'),\n    style='display:flex; gap:1rem; align-items:center'\n))\n\n \n\n\n\n\nColors\n\np(Div(\n    Tag('Blue', cls='--blue'),\n    Tag('Green', cls='--green'),\n    Tag('Grey', cls='--grey'),\n    Tag('Kale', cls='--kale'),\n    Tag('Red', cls='--red'),\n    Tag('Yellow', cls='--yellow'),\n    style='display:flex; gap:0.5rem; flex-wrap:wrap'\n))\n\n \n\n\n\n\nDark\nFor use on dark backgrounds.\n\np(Div(Tag('Dark', cls='--dark'), style='background:#333; padding:1rem'))\n\n \n\n\n\n\nWith Avatar\nTags can include an avatar image.\n\np(Tag(TagAvatar(src='https://ui-avatars.com/api/?name=JD&size=32'), 'With Avatar'))",
+    "crumbs": [
+      "Components"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "zenpy-garden",
+    "section": "",
+    "text": "A library for building server-side rendered Zendesk applications in Python. Wraps Zendesk Garden CSS components in Python components, optimized for FastHTML but adaptable to other Python web frameworks. Inspired by fhdaisy.",
+    "crumbs": [
+      "zenpy-garden"
+    ]
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "zenpy-garden",
+    "section": "Installation",
+    "text": "Installation\npip install zenpy-garden",
+    "crumbs": [
+      "zenpy-garden"
+    ]
+  },
+  {
+    "objectID": "index.html#quick-start",
+    "href": "index.html#quick-start",
+    "title": "zenpy-garden",
+    "section": "Quick Start",
+    "text": "Quick Start\nAdd Garden headers to your FastHTML app:\nfrom fasthtml.common import *\nfrom zpgarden.core import *\nfrom zpgarden.components import *\n\napp = FastHTML(hdrs=garden_hdrs)\nCreate styled components:\nBtn('Click me')\nBtn('Primary', cls='--primary')\nAnchor('Learn more', href='#', cls='--danger')",
+    "crumbs": [
+      "zenpy-garden"
+    ]
+  },
+  {
+    "objectID": "index.html#components",
+    "href": "index.html#components",
+    "title": "zenpy-garden",
+    "section": "Components",
+    "text": "Components\n\nAnchors — Styled links with danger and dark variants\nAvatars — User and system avatars with size options\nButtons — Primary, danger, pill, icon variants\nForms — Inputs, textareas, selects, checkboxes, radios with validation states\nTags — Colored labels with pill and round shapes\n\nSee the Components documentation for full examples.",
+    "crumbs": [
+      "zenpy-garden"
+    ]
+  }
+]
