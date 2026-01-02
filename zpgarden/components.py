@@ -29,3 +29,7 @@ mk_compfn('c-field__input', 'Select', 'Select', xcls='c-field__input--select')
 mk_compfn('c-field__message', 'Div')
 mk_compfn('c-field__checkbox', 'Input', 'Checkbox', type='checkbox')
 mk_compfn('c-field__radio', 'Input', 'Radio', type='radio')
+
+# %% ../nbs/01_components.ipynb 63
+mk_compfn('c-tag', 'Div')
+mk_compfn('c-tag__avatar', 'Img')
