@@ -14,7 +14,18 @@ mk_compfn('c-anchor', 'A')
 
 # %% ../nbs/01_components.ipynb 14
 mk_compfn('c-avatar', 'Figure')
-mk_compfn('c-avatar__txt', 'Span', 'AvatarText')
+mk_compfn('c-avatar__txt', 'Span')
 
-# %% ../nbs/01_components.ipynb 28
-mk_compfn('c-btn', 'Button', 'Btn')
+# %% ../nbs/01_components.ipynb 27
+mk_compfn('c-btn', 'Button')
+
+# %% ../nbs/01_components.ipynb 43
+mk_compfn('c-field', 'Div')
+mk_compfn('c-field__label', 'Label')
+mk_compfn('c-field__hint', 'Div')
+mk_compfn('c-field__input', 'Input')
+mk_compfn('c-field__input', 'Textarea', 'Textarea', xcls='c-field__input--area')
+mk_compfn('c-field__input', 'Select', 'Select', xcls='c-field__input--select')
+mk_compfn('c-field__message', 'Div')
+mk_compfn('c-field__checkbox', 'Input', 'Checkbox', type='checkbox')
+mk_compfn('c-field__radio', 'Input', 'Radio', type='radio')
